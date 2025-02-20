@@ -38,7 +38,14 @@ function MonitorDisplay()
 
     Monitor.setCursorPos(1,9)
     Monitor.setTextColor(colors.white)
-    Monitor.write("ReactorStatus: " .. ReactorStatus)
+    Monitor.write("Reactor Status: " .. ReactorStatus)
+
+    Monitor.setCursorPos(1,11)
+    Monitor.setTextColor(colors.white)
+    Monitor.write("Flux Output:" .. FluxgateOutput.getSignalLowFlow())
+    
+    Monitor.setCursorPos(1,12)
+    Monitor.write("Actual Output: " .. ReactorCurrentOutput)
 end
 
 return MonitorDisplay

@@ -16,12 +16,12 @@ function MainLoop()
         ReactorStatus = ReactorInfo.status
         ReactorCurrentOutput = ReactorInfo.generationRate
     
-        if Monitor then
-            MonitorDisplay()
-        end
-    
         if ReactorStatus == "running" then
             RegulateReactor()
+        end
+
+        if Monitor then
+            MonitorDisplay()
         end
     
         sleep(ReactorUpdateDelay)
