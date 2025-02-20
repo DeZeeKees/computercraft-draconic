@@ -1,6 +1,7 @@
 local commands = {
     exit = "exit",
     clear = "clear",
+    status = "status",
     start = "start",
     stop = "stop",
     help = "help"
@@ -12,14 +13,14 @@ function Terminal()
   
         local input = read()
 
-        if input == "exit" then
+        if input == commands.exit then
             LoopStatus = false
 
-        elseif input == commands.exit then
+        elseif input == commands.clear then
             term.setCursorPos(0,0)
             term.clear()
 
-        elseif input == commands.clear then
+        elseif input == commands.status then
             print(ReactorStatus)
 
         elseif (input == commands.start) then
