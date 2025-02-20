@@ -14,7 +14,12 @@ local baseUrl = "https://raw.githubusercontent.com/" .. repo .. "/" .. branch ..
 
 for _, file in ipairs(files) do
     local url = baseUrl .. file
-    local response = http.get(url)
+    local response = http.get(
+        url,
+        {
+            ["Cache-Control"] = "no-cache"
+        }
+    )
     
     if response then
         local content = response.readAll()
