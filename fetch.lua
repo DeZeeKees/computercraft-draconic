@@ -2,7 +2,12 @@ local repo = "DeZeeKees/computercraft-draconic" -- Replace with your GitHub user
 local branch = "main" -- Change if using a different branch
 
 local files = { -- List of Lua files to fetch
-    "main.lua"
+    "draco_reactor_v2.lua",
+    "startup.lua",
+    "lib/monitor.lua",
+    "lib/reactor.lua",
+    "lib/settings.lua",
+    "lib/terminal.lua"
 }
 
 local baseUrl = "https://raw.githubusercontent.com/" .. repo .. "/" .. branch .. "/"
