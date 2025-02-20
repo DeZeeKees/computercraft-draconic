@@ -1,9 +1,13 @@
 function RegulateReactor()
 
+    if IsStartingUp and ReactorCurrentOutput > ReactorStartupOutput then
+        IsStartingUp = false
+    end
+
     -- ensure the reactor doesn't go kabloowie
     if 
         ReactorTemperature > MaxReactorTemperature 
-        or FluxgateOutput.getSignalLowFlow() > (ReactorCurrentOutput + MaxReactorOutputOvershoot)
+        or ( not IsStartingUp and FluxgateOutput.getSignalLowFlow() > (ReactorCurrentOutput + MaxReactorOutputOvershoot) )
         or ReactorFieldStrength < MinReactorFieldStrength
     then
         Reactor.stopReactor()

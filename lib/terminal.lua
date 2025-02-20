@@ -47,6 +47,7 @@ function Terminal()
         elseif (input == commands.stop) then
             if (ReactorStatus == "running" or ReactorStatus == "warming_up") then
                 Reactor.stopReactor()
+                IsStartingUp = true;
                 print("Stopping Reactor.")
             else
                 print("Unable to stop Reactor.")

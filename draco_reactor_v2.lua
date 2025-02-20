@@ -62,6 +62,7 @@ Monitor = peripheral.wrap("monitor_" .. MonitorId)
 -- Program variables
 
 LoopStatus = true
+IsStartingUp = true
 
 ReactorInfo = Reactor.getReactorInfo()
 ReactorSaturation = 0
@@ -87,7 +88,7 @@ end
 -- Initialize Monitor
 if Monitor then
     Monitor.clear()
-    Monitor.setTextScale(1)
+    Monitor.setTextScale(0.8)
 else
     print("No Monitor connected")
     sleep(5)
