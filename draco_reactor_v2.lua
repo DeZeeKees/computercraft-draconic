@@ -9,11 +9,11 @@ Terminal = require("lib.terminal")
 function MainLoop()
     while LoopStatus do
 
-        Info = Reactor.getReactorInfo()
-        ReactorSaturation = info.energySaturation / info.maxEnergySaturation
-        ReactorFieldStrength = info.ReactorFieldStrength / info.maxFieldStrength
-        ReactorTemperature = info.ReactorTemperature
-        ReactorSaturation = info.status
+        ReactorInfo = Reactor.getReactorInfo()
+        ReactorSaturation = ReactorInfo.energySaturation / ReactorInfo.maxEnergySaturation
+        ReactorFieldStrength = ReactorInfo.ReactorFieldStrength / ReactorInfo.maxFieldStrength
+        ReactorTemperature = ReactorInfo.ReactorTemperature
+        ReactorSaturation = ReactorInfo.status
     
         if Monitor then
             MonitorDisplay()
@@ -70,7 +70,7 @@ ReactorStatus = ""
 -- Clear Terminal before starting program
 term.clear()
 
-if not info then
+if not ReactorInfo then
     print("Error: Unable to fetch Reactor data.")
     return
 end
