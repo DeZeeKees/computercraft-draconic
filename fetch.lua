@@ -17,7 +17,9 @@ for _, file in ipairs(files) do
     local response = http.get(
         url,
         {
-            ["Cache-Control"] = "no-cache"
+            ["Cache-Control"] = "no-cache, no-store, must-revalidate",
+            ["Pragma"] = "no-cache",
+            ["Expires"] = 0
         }
     )
     
