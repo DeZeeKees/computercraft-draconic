@@ -17,7 +17,7 @@ function Terminal()
             LoopStatus = false
 
         elseif input == commands.clear then
-            term.setCursorPos(0,0)
+            term.setCursorPos(1,1)
             term.clear()
 
         elseif input == commands.status then
