@@ -11,10 +11,10 @@ function Terminal()
             term.clear()
 
         elseif input == "status" then
-            print(status)
+            print(ReactorStatus)
 
         elseif (input == "start") then
-            if (status == "cold" or status == "cooling" or status == "warming_up") then
+            if (ReactorStatus == "cold" or ReactorStatus == "cooling" or ReactorStatus == "warming_up") then
 
                 print("Charging Reactor")
                 Reactor.chargeReactor()
@@ -26,7 +26,7 @@ function Terminal()
                 FluxgateInjector.setSignalLowFlow(ReactorStartupInput)
                 FluxgateOutput.setSignalLowFlow(ReactorStartupOutput)
 
-                while status == "warming_up" do
+                while ReactorStatus == "warming_up" do
                     print("attempting to start Reactor")
                     Reactor.activateReactor()
                     sleep(1)
@@ -35,7 +35,7 @@ function Terminal()
                 print("Starting Draconic Reactor.")
             end
         elseif (input == "stop") then
-            if (status == "running" or status == "warming_up") then
+            if (ReactorStatus == "running" or ReactorStatus == "warming_up") then
                 Reactor.stopReactor()
                 print("Stopping Reactor.")
             else

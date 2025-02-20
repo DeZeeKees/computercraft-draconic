@@ -19,7 +19,7 @@ function MainLoop()
             MonitorDisplay()
         end
     
-        if status == "running" then
+        if ReactorStatus == "running" then
             RegulateReactor()
         end
     
