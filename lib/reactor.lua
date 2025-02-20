@@ -1,6 +1,11 @@
 function RegulateReactor()
 
-    if ReactorTemperature > MaxReactorTemperature then
+    -- ensure the reactor doesn't go kabloowie
+    if 
+        ReactorTemperature > MaxReactorTemperature 
+        or FluxgateOutput.getSignalLowFlow() > (ReactorCurrentOutput + MaxReactorOutputOvershoot)
+        or ReactorFieldStrength < MinReactorFieldStrength
+    then
         Reactor.stopReactor()
     end
 

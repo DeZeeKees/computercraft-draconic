@@ -84,6 +84,12 @@ function DefineSettings()
         type = "number"
     })
 
+    settings.define("draco.max_output_overshoot", {
+        description = "Defines how much the output flowgate setting can be larget than the actual output before the reactor shuts down",
+        default = 100000,
+        type = "number"
+    })
+
 end
 
 return DefineSettings

@@ -14,6 +14,7 @@ function MainLoop()
         ReactorFieldStrength = ReactorInfo.fieldStrength / ReactorInfo.maxFieldStrength
         ReactorTemperature = ReactorInfo.temperature
         ReactorStatus = ReactorInfo.status
+        ReactorCurrentOutput = ReactorInfo.generationRate
     
         if Monitor then
             MonitorDisplay()
@@ -38,6 +39,7 @@ TargetReactorSaturation = settings.get("draco.target_saturation")
 MinReactorFieldStrength = settings.get("draco.min_field_strength")
 MaxReactorTemperature = settings.get("draco.max_temp")
 MinReactorSaturation = settings.get("draco.min_saturation")
+MaxReactorOutputOvershoot = settings.get("draco.max_output_overshoot")
 
 ReactorOutputAdjustmentAmount = settings.get("draco.output_adjustment_amount")
 ReactorInputAdjustmentAmount = settings.get("draco.draco.input_adjustment_amount")
@@ -66,6 +68,7 @@ ReactorSaturation = 0
 ReactorFieldStrength = 0
 ReactorTemperature = 0
 ReactorStatus = ""
+ReactorCurrentOutput = 0
 
 -- Clear Terminal before starting program
 term.clear()
