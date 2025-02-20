@@ -24,7 +24,7 @@ while true do
   
   info = r.getReactorInfo()
   status = info["status"]
-  a = info["fieldStrength"]
+  a = info["ReactorFieldStrength"]
   b = info["maxFieldStrength"]
   
   if (input == "charge") then
