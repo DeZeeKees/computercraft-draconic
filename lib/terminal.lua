@@ -1,3 +1,11 @@
+local commands = {
+    exit = "exit",
+    clear = "clear",
+    start = "start",
+    stop = "stop",
+    help = "help"
+}
+
 function Terminal()
     while LoopStatus do 
         term.write("> ")
@@ -7,13 +15,14 @@ function Terminal()
         if input == "exit" then
             LoopStatus = false
 
-        elseif input == "clear" then
+        elseif input == commands.exit then
+            term.setCursorPos(0,0)
             term.clear()
 
-        elseif input == "status" then
+        elseif input == commands.clear then
             print(ReactorStatus)
 
-        elseif (input == "start") then
+        elseif (input == commands.start) then
             if (ReactorStatus == "cold" or ReactorStatus == "cooling" or ReactorStatus == "warming_up") then
 
                 print("Charging Reactor")
@@ -34,12 +43,16 @@ function Terminal()
 
                 print("Starting Draconic Reactor.")
             end
-        elseif (input == "stop") then
+        elseif (input == commands.stop) then
             if (ReactorStatus == "running" or ReactorStatus == "warming_up") then
                 Reactor.stopReactor()
                 print("Stopping Reactor.")
             else
                 print("Unable to stop Reactor.")
+            end
+        elseif (input == commands.help) then
+            for _, cmd in pairs(commands) do
+                print(cmd)
             end
         end
     end
