@@ -38,7 +38,7 @@ function MonitorDisplay()
 
     Monitor.setCursorPos(1,9)
     Monitor.setTextColor(colors.white)
-    Monitor.write("ReactorStatus: " .. status)
+    Monitor.write("ReactorStatus: " .. ReactorStatus)
 end
 
 return MonitorDisplay
