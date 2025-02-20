@@ -13,7 +13,7 @@ function MainLoop()
         ReactorSaturation = ReactorInfo.energySaturation / ReactorInfo.maxEnergySaturation
         ReactorFieldStrength = ReactorInfo.fieldStrength / ReactorInfo.maxFieldStrength
         ReactorTemperature = ReactorInfo.temperature
-        ReactorSaturation = ReactorInfo.status
+        ReactorStatus = ReactorInfo.status
     
         if Monitor then
             MonitorDisplay()
