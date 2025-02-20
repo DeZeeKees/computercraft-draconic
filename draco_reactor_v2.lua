@@ -2,8 +2,8 @@
 -- Adjusts fluxgate settings to maintain stability
 
 DefineSettings = require("lib.settings")
-MonitorDisplay = require("lib.Monitor")
-RegulateReactor = require("lib.Reactor")
+MonitorDisplay = require("lib.monitor")
+RegulateReactor = require("lib.reactor")
 Terminal = require("lib.terminal")
 
 function MainLoop()
